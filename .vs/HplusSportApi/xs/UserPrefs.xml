@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{ED6DC5BD-235C-461C-A9A3-D9893FD1B45A}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HplusSportApi/Controllers/ProductsController.cs">
+    <Files>
+      <File FileName="HplusSportApi/Program.cs" Line="21" Column="29" />
+      <File FileName="HplusSportApi/Controllers/ProductsController.cs" Line="51" Column="6" />
+      <File FileName="HplusSportApi/Models/Category.cs" Line="9" Column="1" />
+      <File FileName="HplusSportApi/Models/ShopContext.cs" Line="18" Column="40" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HplusSportApi" expanded="True">
+            <Node name="HplusSportApi" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="ProductsController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.HplusSportApi PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
