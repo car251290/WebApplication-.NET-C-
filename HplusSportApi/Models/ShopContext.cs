@@ -4,6 +4,7 @@ using System.Linq;
 using System.Data.Entity.Core;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using HplusSport.Api.Models;
 
 namespace HplusSportApi.Models
 {
@@ -31,9 +32,7 @@ namespace HplusSportApi.Models
 
             modelBuilder.Seed();
 
-
         }
-
 
     }
 }

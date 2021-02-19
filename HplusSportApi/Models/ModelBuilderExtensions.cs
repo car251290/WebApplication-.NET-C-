@@ -1,4 +1,5 @@
 ﻿using System;
+using HplusSport.Api.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HplusSportApi.Models
