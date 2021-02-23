@@ -60,7 +60,7 @@ namespace HplusSportApi.Controllers
                 .Skip(queryParameters.Size * (queryParameters.Page - 1))
                 .Take(queryParameters.Size);
 
-            return Ok(await products.ToArrayAsync());
+            return (IActionResult)Ok(await products.ToArrayAsync());
         }
 
         [HttpGet("{id}")]
@@ -70,7 +70,7 @@ namespace HplusSportApi.Controllers
             var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
-                return NotFound();
+                return (IActionResult)NotFound();
             }
             return Ok(product);
         }
@@ -92,7 +92,7 @@ namespace HplusSportApi.Controllers
         public async Task<IActionResult> PutProduct([FromRoute]int id, [FromBody] product product)
         {
             if (id != product.Id) {
-                return BadRequest();
+                return (IActionResult)BadRequest();
             }
             _context.Entry(product).State = EntityState.Modified;
 
@@ -105,7 +105,7 @@ namespace HplusSportApi.Controllers
             {
                 if (_context.Products.Find(id) == null)
                 {
-                    return NotFound();
+                    return (IActionResult)NotFound();
                 }
                 throw;
             }
