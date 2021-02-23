@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using HplusSportApi.Models;
+using Microsoft.Extensions.Options;
 
 namespace HplusSportApi
 {
@@ -29,7 +30,19 @@ namespace HplusSportApi
         {
             services.AddDbContext<ShopContext>(options =>
            options.UseInMemoryDatabase("Shop"));
-            services.AddControllers();
+            services.AddControllers()
+            .ConfigureApiBehaviorOptions(options =>
+            {
+                //options.SuppressModelStateInvalidFilter = true;
+                
+            }
+            );
+                                    
+        }
+
+        private void ConfigureApiBehaviorOptions(Func<object, object> p)
+        {
+            throw new NotImplementedException();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
