@@ -18,14 +18,16 @@ namespace HplusSportApi.Controllers
     //return all  the products and will show on an array
 
 
-    [Route("[controller]")]
+    [ApiVersion("1.0")]
+    [Route("v{v:apiVersion}/[controller]}")]
     [ApiController]
 
-    public class ProductsController : ControllerBase
+
+    public class ProductsV1_0Controller : ControllerBase
     {
         private readonly ShopContext _context;
 
-        public ProductsController(ShopContext context)
+        public ProductsV1_0Controller(ShopContext context)
         {
             _context = context;
 
@@ -36,13 +38,13 @@ namespace HplusSportApi.Controllers
         public async Task<IActionResult> GetAllProducts([FromQuery] ProductQueryParameters queryParameters)
         {
             IQueryable<product> products = (IQueryable<product>)_context.Products;
-            
+
 
             if (queryParameters.MinPrice != null &&
                 queryParameters.MaxPrice != null)
             {
-                products = products.Where( p => p.Price >= queryParameters.MinPrice.Value &&
-                         p.Price <= queryParameters.MaxPrice.Value);
+                products = products.Where(p => p.Price >= queryParameters.MinPrice.Value &&
+                        p.Price <= queryParameters.MaxPrice.Value);
             }
             //Impramentating Name on the ITEMS this is for the search tearm
             if (!string.IsNullOrEmpty(queryParameters.Sku))
@@ -89,7 +91,7 @@ namespace HplusSportApi.Controllers
 
         [HttpPut("{id}")]
 
-        public async Task<IActionResult> PutProduct([FromRoute]int id, [FromBody] product product)
+        public async Task<IActionResult> PutProduct([FromRoute] int id, [FromBody] product product)
         {
             if (id != product.Id) {
                 return (IActionResult)BadRequest();
@@ -118,7 +120,8 @@ namespace HplusSportApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<product>> DeleteProduct(int id) {
+        public async Task<ActionResult<product>> Delete(int id) {
+            //this is searching for the product
             var product = await _context.Products.FindAsync(id);
             if (product == null)
             {
@@ -128,6 +131,31 @@ namespace HplusSportApi.Controllers
             await _context.SaveChangesAsync();
 
             return product;
+
+        }
+
+
+        [HttpDelete]
+        [Route("Delete")]
+        public async Task<ActionResult<product>> DeleteMultiple([FromQuery] int[]ids)
+        {
+            var products = new List<product>();
+            foreach (var id in ids)
+            {
+                //this is searching for the product
+                var product = await _context.Products.FindAsync(id);
+                if (product == null)
+                {
+                    return NotFound();
+                }
+                product.Add(product);
+
+            }
+
+            _context.Products.RemoveRange(products);
+            await _context.SaveChangesAsync();
+
+            return Ok(products);
 
         }
 
