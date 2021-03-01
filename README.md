@@ -9,6 +9,13 @@ If not, the status code would give me a further clue as to why my request failed
 ## HTTPS
 HTTP is not just for serving up web pages. HTTP is also a powerful platform for building APIs that expose services and data. HTTP is simple, flexible, and ubiquitous. Almost any platform that you can think of has an HTTP library, so HTTP services can reach a broad range of clients, including browsers, mobile devices, and traditional desktop applications.
 
+
+## Model 
+
+Adding a Model
+A model is an object that represents the data in your application. ASP.NET Web API can automatically serialize your model to JSON, XML, or some other format, and then write the serialized data into the body of the HTTP response message
+
+
 ## Methods 
 
 REST on top of HTTP, and how it leverages the resource based nature of the Web to design simple and scalable web services. Find it here!
