@@ -15,6 +15,10 @@ HTTP is not just for serving up web pages. HTTP is also a powerful platform for 
 Adding a Model
 A model is an object that represents the data in your application. ASP.NET Web API can automatically serialize your model to JSON, XML, or some other format, and then write the serialized data into the body of the HTTP response message
 
+## controller 
+
+Adding a Controller
+In Web API, a controller is an object that handles HTTP requests. We'll add a controller that can return either a list of products or a single product specified by ID.
 
 ## Methods 
 
