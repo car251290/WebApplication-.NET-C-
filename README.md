@@ -26,4 +26,4 @@ REST on top of HTTP, and how it leverages the resource based nature of the Web t
 
 ## client 
 
-Run in the JS file using HTML and CSS for display the table
+Run in the JS file using HTML and CSS for display it on the HTML and in the CSS for the front end of the project
