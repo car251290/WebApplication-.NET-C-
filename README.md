@@ -20,6 +20,9 @@ A model is an object that represents the data in your application. ASP.NET Web A
 Adding a Controller
 In Web API, a controller is an object that handles HTTP requests. We'll add a controller that can return either a list of products or a single product specified by ID.
 
+#View 
+Adding the view controller using HTML and displaying the object of my controller so it will become easer to see display it in the application.
+
 ## Methods 
 
 REST on top of HTTP, and how it leverages the resource based nature of the Web to design simple and scalable web services. Find it here!
