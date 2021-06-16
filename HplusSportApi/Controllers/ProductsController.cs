@@ -46,6 +46,7 @@ namespace HplusSportApi.Controllers
                 products = products.Where(p => p.Price >= queryParameters.MinPrice.Value &&
                         p.Price <= queryParameters.MaxPrice.Value);
             }
+            
             //Impramentating Name on the ITEMS this is for the search tearm
             if (!string.IsNullOrEmpty(queryParameters.Sku))
             {
@@ -57,6 +58,7 @@ namespace HplusSportApi.Controllers
                 products = products.Where(
                     p => p.Name.ToLower().Contains(queryParameters.Name.ToLower()));
             }
+            
             // products and search skip
             products = products
                 .Skip(queryParameters.Size * (queryParameters.Page - 1))
@@ -66,6 +68,7 @@ namespace HplusSportApi.Controllers
         }
 
         [HttpGet("{id}")]
+        
         //get that can appear if we dont have the ID
         public async Task<IActionResult> GetProduct(int id)
         {
@@ -76,6 +79,7 @@ namespace HplusSportApi.Controllers
             }
             return Ok(product);
         }
+        
         //to post the Products 
         [HttpPost]
         public async Task<ActionResult<product>> PostProduct([FromBody] product product)
@@ -133,7 +137,6 @@ namespace HplusSportApi.Controllers
             return product;
 
         }
-
 
         [HttpDelete]
         [Route("Delete")]
