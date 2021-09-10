@@ -17,7 +17,6 @@ namespace HplusSportApi.Controllers
     //this is for see the data
     //return all  the products and will show on an array
 
-
     [ApiVersion("1.0")]
     [Route("v{v:apiVersion}/[controller]}")]
     [ApiController]
