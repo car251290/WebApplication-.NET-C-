@@ -23,6 +23,7 @@ Adding the view controller using HTML and displaying the object of my controller
 ## Methods 
 
 REST on top of HTTP, and how it leverages the resource based nature of the Web to design simple and scalable web services. Find it here!
+ This means that developers can perform Create, Read, Update, and Delete (CRUD) 
 
 ## client 
 
