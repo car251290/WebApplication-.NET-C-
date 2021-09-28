@@ -4,6 +4,7 @@
 ## HTTP CALL 
 Status codes are a useful HTTP construct that provide information to the consumer about the outcome of a request and how to interpret it. 
 For example, if I were to make a request to retrieve a file from a web server, I would expect to see a response with the status code describing whether or not my request was completed successfully.
+
 If not, the status code would give me a further clue as to why my request failed
 HTTP is not just for serving up web pages. HTTP is also a powerful platform for building APIs that expose services and data. HTTP is simple, flexible, and ubiquitous. Almost any platform that you can think of has an HTTP library, so HTTP services can reach a broad range of clients, including browsers, mobile devices, and traditional desktop applications.
 
